@@ -1,0 +1,74 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "foregroundRoll",
+  "_objFlags": 0,
+  "_native": "",
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "events": [],
+  "_duration": 1.5,
+  "_keys": [
+    [
+      0,
+      1.5
+    ],
+    [
+      0.08333333333333333,
+      1.5
+    ],
+    []
+  ],
+  "_stepness": 0,
+  "_curves": [
+    {
+      "modifiers": [
+        "x"
+      ],
+      "data": {
+        "keys": 0,
+        "values": [
+          -480,
+          -1500
+        ],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "y"
+      ],
+      "data": {
+        "keys": 1,
+        "values": [
+          -90.82,
+          -259.491
+        ],
+        "easingMethods": {
+          "0": "cubicIn"
+        }
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "z"
+      ],
+      "data": {
+        "keys": 2,
+        "values": [],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    }
+  ],
+  "_commonTargets": [
+    {
+      "modifiers": [
+        "position"
+      ]
+    }
+  ],
+  "_hash": 2923506899
+}
