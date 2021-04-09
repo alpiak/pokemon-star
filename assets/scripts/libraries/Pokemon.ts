@@ -1,6 +1,6 @@
 import Gender from "./Gender";
 
-export default class Pokemon {
+export default class {
     public readonly id: number;
     public readonly name: string;
     public readonly gender: Gender;

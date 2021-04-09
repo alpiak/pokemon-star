@@ -1,26 +1,24 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "enemyAppear",
+  "_name": "throwPokeBall",
   "_objFlags": 0,
   "_native": "",
   "sample": 60,
   "speed": 1,
   "wrapMode": 1,
-  "events": [
-    {
-      "frame": 2.3333333333333335,
-      "func": "afterAppear",
-      "params": []
-    }
-  ],
-  "_duration": 2.5,
+  "events": [],
+  "_duration": 1.5,
   "_keys": [
     [
       0,
-      2.5
+      1.5
     ],
-    [],
-    []
+    [
+      0
+    ],
+    [
+      0
+    ]
   ],
   "_stepness": 0,
   "_curves": [
@@ -31,16 +29,11 @@
       "data": {
         "keys": 0,
         "values": [
-          -725.687,
-          219.134
+          0,
+          -234.862
         ],
         "easingMethods": {
-          "0": [
-            0.32,
-            0.95,
-            0.31,
-            1
-          ]
+          "0": "cubicInOut"
         }
       },
       "commonTarget": 0
@@ -51,8 +44,12 @@
       ],
       "data": {
         "keys": 1,
-        "values": [],
-        "easingMethods": {}
+        "values": [
+          6.294
+        ],
+        "easingMethods": {
+          "0": "cubicInOut"
+        }
       },
       "commonTarget": 0
     },
@@ -62,8 +59,12 @@
       ],
       "data": {
         "keys": 2,
-        "values": [],
-        "easingMethods": {}
+        "values": [
+          0
+        ],
+        "easingMethods": {
+          "0": "cubicInOut"
+        }
       },
       "commonTarget": 0
     }
@@ -75,5 +76,5 @@
       ]
     }
   ],
-  "_hash": 4262876071
+  "_hash": 3125877475
 }

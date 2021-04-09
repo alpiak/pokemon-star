@@ -1,0 +1,129 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "pokeballFly",
+  "_objFlags": 0,
+  "_native": "",
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "events": [
+    {
+      "frame": 1.6666666666666667,
+      "func": "afterAppear",
+      "params": []
+    }
+  ],
+  "_duration": 1.75,
+  "_keys": [
+    [],
+    [],
+    [
+      0,
+      1.75
+    ],
+    [
+      0,
+      0.5
+    ],
+    [
+      0,
+      1.75
+    ],
+    []
+  ],
+  "_stepness": 0,
+  "_curves": [
+    {
+      "modifiers": [
+        "x"
+      ],
+      "data": {
+        "keys": 0,
+        "values": [],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "y"
+      ],
+      "data": {
+        "keys": 1,
+        "values": [],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "z"
+      ],
+      "data": {
+        "keys": 2,
+        "values": [
+          0,
+          1800
+        ],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "x"
+      ],
+      "data": {
+        "keys": 3,
+        "values": [
+          -317.973,
+          -279.679
+        ],
+        "easingMethods": {
+          "0": "cubicOut"
+        }
+      },
+      "commonTarget": 1
+    },
+    {
+      "modifiers": [
+        "y"
+      ],
+      "data": {
+        "keys": 4,
+        "values": [
+          27.269,
+          -181.629
+        ],
+        "easingMethods": {
+          "0": "quintIn"
+        }
+      },
+      "commonTarget": 1
+    },
+    {
+      "modifiers": [
+        "z"
+      ],
+      "data": {
+        "keys": 5,
+        "values": [],
+        "easingMethods": {}
+      },
+      "commonTarget": 1
+    }
+  ],
+  "_commonTargets": [
+    {
+      "modifiers": [
+        "eulerAngles"
+      ]
+    },
+    {
+      "modifiers": [
+        "position"
+      ]
+    }
+  ],
+  "_hash": 1078367922
+}

@@ -1,6 +1,6 @@
 {
   "__type__": "cc.AnimationClip",
-  "_name": "enemyAppear",
+  "_name": "playerAppear",
   "_objFlags": 0,
   "_native": "",
   "sample": 60,
@@ -8,8 +8,18 @@
   "wrapMode": 1,
   "events": [
     {
+      "frame": 0,
+      "func": "",
+      "params": []
+    },
+    {
       "frame": 2.3333333333333335,
       "func": "afterAppear",
+      "params": []
+    },
+    {
+      "frame": 2.3333333333333335,
+      "func": "",
       "params": []
     }
   ],
@@ -31,15 +41,15 @@
       "data": {
         "keys": 0,
         "values": [
-          -725.687,
-          219.134
+          852.575,
+          -234.862
         ],
         "easingMethods": {
           "0": [
-            0.32,
-            0.95,
-            0.31,
-            1
+            0.69,
+            1.01,
+            0.6,
+            1.01
           ]
         }
       },
@@ -75,5 +85,5 @@
       ]
     }
   ],
-  "_hash": 4262876071
+  "_hash": 807817608
 }

@@ -2,16 +2,28 @@ import { _decorator, Component, Node, director, game } from 'cc';
 const { ccclass, property } = _decorator;
 
 import Context from './Context';
-import Gender from './entities/Gender';
+import Gender from './libraries/Gender';
 
 @ccclass('OutdoorCanvas')
 export class OutdoorCanvas extends Component {
     @property({ type: Node })
     private contextNode!: Node;
     public start() {
-        game.addPersistRootNode(this.contextNode);
+        this.initContext(this.contextNode);
 
         this.enterBattle();
+    }
+
+    private initContext(contextNode: Node) {
+        game.addPersistRootNode(contextNode);
+
+        const context = this.contextNode.getComponent(Context);
+
+        if (!context) {
+            throw Error("No context.");
+        }
+
+        context.player = context.getPlayer("lucas", Gender.Male);
     }
     
     private enterBattle() {
@@ -21,7 +33,8 @@ export class OutdoorCanvas extends Component {
             throw Error("No context.");
         }
 
-        context.enemy = context.getPokemon(25, Gender.Female, 1);
+        context.playerPokemon = context.getPokemon(25, Gender.Female, 1);
+        context.enemyPokemon = context.getPokemon(25, Gender.Female, 1);
         director.preloadScene("battle");
         director.loadScene("battle");
     }

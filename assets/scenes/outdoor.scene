@@ -471,7 +471,7 @@
     "contextNode": {
       "__id__": 20
     },
-    "_id": "0fTPSGySJOe5S2Lyl01+0z"
+    "_id": "f1bFYy/rVKOZdIkY9ervzj"
   },
   {
     "__type__": "cc.Node",
@@ -525,9 +525,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "lang": "en",
-    "enemy": 0,
-    "_id": "00j3y4oEBMb64i8/XOOt97"
+    "lang": "ja-JP",
+    "_id": "0eDpeFdQpBmIEJutkOVsxV"
   },
   {
     "__type__": "cc.SceneGlobals",

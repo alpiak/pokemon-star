@@ -2,7 +2,7 @@
   "ver": "4.0.9",
   "importer": "typescript",
   "imported": true,
-  "uuid": "1aedac4f-db10-4a4e-b75f-93ba5c3595fb",
+  "uuid": "765fa0f3-f285-43db-8547-6e33cefc9e50",
   "files": [
     ".js",
     "editor.js",
@@ -11,7 +11,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/scripts/entities/Pokemon.js",
+    "moduleId": "project:///assets/scripts/EventEmitter.js",
     "importerSettings": 7
   }
 }

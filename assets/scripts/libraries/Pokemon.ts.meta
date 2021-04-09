@@ -2,7 +2,7 @@
   "ver": "4.0.9",
   "importer": "typescript",
   "imported": true,
-  "uuid": "c02f9a4e-072a-4dec-9961-6df2895311c3",
+  "uuid": "1aedac4f-db10-4a4e-b75f-93ba5c3595fb",
   "files": [
     ".js",
     "editor.js",
@@ -11,7 +11,7 @@
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
-    "moduleId": "project:///assets/scripts/entities/Gender.js",
+    "moduleId": "project:///assets/scripts/libraries/Pokemon.js",
     "importerSettings": 7
   }
 }

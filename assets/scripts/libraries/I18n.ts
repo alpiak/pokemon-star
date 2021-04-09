@@ -6,7 +6,7 @@ import ja_JP from "../../i18n/ja-JP";
 import zh_CN from "../../i18n/zh-CN";
 import zh from '../../i18n/zh';
 
-export default class I18N {
+export default class I18n {
     private lang: string = "en";
 
     constructor (lang = config.language) {
