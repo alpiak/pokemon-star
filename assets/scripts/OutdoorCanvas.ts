@@ -23,7 +23,7 @@ export class OutdoorCanvas extends Component {
             throw Error("No context.");
         }
 
-        context.player = context.getPlayer("lucas", Gender.Male);
+        context.player = context.getPlayer("lucas", Gender.Male, [context.getPokemon(25, Gender.Female, 1)]);
     }
     
     private enterBattle() {
@@ -33,7 +33,6 @@ export class OutdoorCanvas extends Component {
             throw Error("No context.");
         }
 
-        context.playerPokemon = context.getPokemon(25, Gender.Female, 1);
         context.enemyPokemon = context.getPokemon(25, Gender.Female, 1);
         director.preloadScene("battle");
         director.loadScene("battle");

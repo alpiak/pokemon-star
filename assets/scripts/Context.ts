@@ -18,8 +18,6 @@ export default class Context extends Component {
     public enemyPokemon?: Pokemon;
     @property
     public player?: Player;
-    @property
-    public playerPokemon?: Pokemon;
 
     constructor() {
         super();
@@ -32,14 +30,14 @@ export default class Context extends Component {
         return this.i18n.getText(id);
     }
     
-    public getPlayer(id: string, gender: Gender) {
+    public getPlayer(id: string, gender: Gender, pokemons?: Array<Pokemon>) {
         const name = this.i18n.getText(id);
 
         if (!name) {
             throw Error(`Player not exists. id: ${id}`);
         }
 
-        return new Player(id, name, gender);
+        return new Player(id, name, gender, pokemons);
     }
     
     public getPokemon(id: number, gender: Gender, level: number) {

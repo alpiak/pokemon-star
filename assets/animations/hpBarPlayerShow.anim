@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "hpBarPlayerShow",
+  "_objFlags": 0,
+  "_native": "",
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "events": [],
+  "_duration": 0.3333333333333333,
+  "_keys": [
+    [
+      0,
+      0.3333333333333333
+    ],
+    [],
+    []
+  ],
+  "_stepness": 0,
+  "_curves": [
+    {
+      "modifiers": [
+        "x"
+      ],
+      "data": {
+        "keys": 0,
+        "values": [
+          709.189,
+          241.855
+        ],
+        "easingMethods": {
+          "0": [
+            0.33,
+            0.6,
+            0.61,
+            1.15
+          ]
+        }
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "y"
+      ],
+      "data": {
+        "keys": 1,
+        "values": [],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    },
+    {
+      "modifiers": [
+        "z"
+      ],
+      "data": {
+        "keys": 2,
+        "values": [],
+        "easingMethods": {}
+      },
+      "commonTarget": 0
+    }
+  ],
+  "_commonTargets": [
+    {
+      "modifiers": [
+        "position"
+      ]
+    }
+  ],
+  "_hash": 3539621599
+}

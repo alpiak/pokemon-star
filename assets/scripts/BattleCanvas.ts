@@ -48,7 +48,7 @@ export class BattleCanvas extends Component {
         }
 
         this.node.getChildByName("enemy")?.on("afterAppear", () => {
-            this.node.getChildByPath("hpBarEnemy")?.getComponent(Animation)?.play();
+            this.node.getChildByPath("hpBarEnemy")?.getComponent(Animation)?.play("hpBarEnemyShow");
         });
     }
 
@@ -78,16 +78,44 @@ export class BattleCanvas extends Component {
 
                     startConversation([
                         this.context.getI18nText("battle_opening_conversion__1").replace("?", this.context.enemyPokemon?.name),
-                        this.context.getI18nText("battle_opening_conversion__2").replace("?", this.context.playerPokemon?.name),
+                        this.context.getI18nText("battle_opening_conversion__2").replace("?", this.context.player?.pokemons[0]?.name),
                     ], async (line: string) => {
                         await showTextLikeTypeWriter(messageLabel, line);
                     }, async () => {
                         this.node.getChildByPath("player/body")?.getComponent(Animation)?.play("throwPokeball");
 
                         await new Promise((r) => setTimeout(r, 500));
-                        
+
                         this.node.getChildByPath("pokeball")?.getComponent(Animation)?.play("pokeballFly");
                     }, { autoPassTimeout: 1000 });
+                });
+            });
+            
+            const pokemonNameLabel = this.node.getChildByPath("hpBarPlayer/pokemonName")?.getComponent(Label);
+
+            if (pokemonNameLabel) {
+                pokemonNameLabel.string = this.context.player?.pokemons[0]?.name || "";
+            }
+
+            resources.load([`textures/pokemons/${this.context.player?.pokemons[0]?.id}_player`], ImageAsset, (err: Error | null, imageAssets: ImageAsset[] | null | undefined) => {
+                if (err) {
+                    throw err;
+                }
+    
+                if (imageAssets && imageAssets[0]) {
+                    const sprite = this.node.getChildByPath("player/pokemon")?.getComponent(Sprite);
+                    
+                    if (sprite) {
+                        sprite.spriteFrame = SpriteFrame.createWithImage(imageAssets[0]);
+                    }
+                }
+
+                this.node.getChildByPath("pokeball")?.on("afterAppear", () => {
+                    this.node.getChildByPath("player/pokemon")?.getComponent(Animation)?.play("pokemonAppear");
+                });
+
+                this.node.getChildByPath("player/pokemon")?.on("afterAppear", () => {
+                    this.node.getChildByPath("hpBarPlayer")?.getComponent(Animation)?.play("hpBarPlayerShow");
                 });
             });
         }
