@@ -4,4 +4,5 @@ export default {
     "pokemon_name__483": "帝牙卢卡",
     "battle_opening_conversion__1": "野生的?出现了！",
     "battle_opening_conversion__2": "就决定是你了，?！",
+    "battle_conversion__1": "?要做什么？",
 };

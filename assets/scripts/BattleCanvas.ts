@@ -1,12 +1,16 @@
-import { _decorator, Component, Sprite, SpriteFrame, ImageAsset, Label, Animation, find, resources } from 'cc';
+import { _decorator, Component, Sprite, SpriteFrame, ImageAsset, Label, Animation, UIOpacity, find, resources } from 'cc';
 const { ccclass, property } = _decorator;
 
-import Context from './Context';
+import Context from "./Context";
+import Navigation from "./libraries/Navigation";
+import NavigationItem from "./libraries/NavigationItem";
 
 import { showTextLikeTypeWriter, startConversation } from "./libraries/utils";
 
 @ccclass('BattleCanvas')
 export class BattleCanvas extends Component {
+    private static NoDialogUIComponentError = Error("UI component to show dialog is not existing.");
+
     @property({ type: Context })
     private context!: Context;
 
@@ -73,7 +77,7 @@ export class BattleCanvas extends Component {
                     const messageLabel = this.node.getChildByPath("actions/dialogBox/message")?.getComponent(Label);
 
                     if (!messageLabel) {
-                        throw Error("UI component to show dialog is not existing.");
+                        throw BattleCanvas.NoDialogUIComponentError;
                     }
 
                     startConversation([
@@ -116,8 +120,62 @@ export class BattleCanvas extends Component {
 
                 this.node.getChildByPath("player/pokemon")?.on("afterAppear", () => {
                     this.node.getChildByPath("hpBarPlayer")?.getComponent(Animation)?.play("hpBarPlayerShow");
+                    this.showNavigation();
                 });
             });
         }
+    }
+    
+    private showNavigation() {
+        const fight = new NavigationItem(this.node.getChildByPath("actions/menu/fight") || undefined);
+        const bag = new NavigationItem(this.node.getChildByPath("actions/menu/bag") || undefined);
+        const pokemon = new NavigationItem(this.node.getChildByPath("actions/menu/pokemon") || undefined);
+        const run = new NavigationItem(this.node.getChildByPath("actions/menu/run") || undefined);
+
+        fight.right = bag;
+        fight.bottom = pokemon;
+        bag.left = fight;
+        bag.bottom = run;
+        pokemon.top = fight;
+        pokemon.right = run;
+        run.top = bag;
+        run.left = pokemon;
+
+        const menu = new Navigation([fight, bag, pokemon, run]);
+
+        const onFocus = (item: NavigationItem) => {
+            const uiOpacity = item.uiNode?.getChildByPath("cursor")?.getComponent(UIOpacity);
+
+            if (!uiOpacity) {
+                return;
+            }
+            
+            uiOpacity.opacity = 255;
+        };
+        
+        const onLeave = (item: NavigationItem) => {
+            const uiOpacity = item.uiNode?.getChildByPath("cursor")?.getComponent(UIOpacity);
+
+            if (!uiOpacity) {
+                return;
+            }
+            
+            uiOpacity.opacity = 0;
+
+        }
+
+        menu.listenToKeyboard(onFocus, onLeave);
+        menu.listenToMouse(onFocus, onLeave);
+        menu.listenToTouch(onFocus, onLeave);
+
+        this.node.getChildByPath("actions/menu")?.getComponent(Animation)?.play("menuShow");
+
+        const messageLabel = this.node.getChildByPath("actions/dialogBox/message")?.getComponent(Label);
+
+        if (!messageLabel) {
+            throw BattleCanvas.NoDialogUIComponentError;
+        }
+        
+        messageLabel.string = this.context.getI18nText("battle_conversion__1").replace("?", this.context.player?.pokemons[0]?.name);
     }
 }

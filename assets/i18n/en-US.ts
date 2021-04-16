@@ -4,4 +4,5 @@ export default {
     "pokemon_name__483": "Dialga",
     "battle_opening_conversion__1": "Wild ? jumping up!",
     "battle_opening_conversion__2": "Go, ?!",
+    "battle_conversion__1": "What will ? do\?",
 };

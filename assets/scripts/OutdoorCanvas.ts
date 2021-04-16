@@ -33,7 +33,7 @@ export class OutdoorCanvas extends Component {
             throw Error("No context.");
         }
 
-        context.enemyPokemon = context.getPokemon(25, Gender.Female, 1);
+        context.enemyPokemon = context.getPokemon(483, Gender.Female, 1);
         director.preloadScene("battle");
         director.loadScene("battle");
     }
