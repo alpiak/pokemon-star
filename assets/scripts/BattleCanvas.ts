@@ -1,4 +1,4 @@
-import { _decorator, Component, Sprite, SpriteFrame, ImageAsset, Label, Animation, UIOpacity, find, resources } from 'cc';
+import { _decorator, Component, Sprite, SpriteFrame, ImageAsset, Label, Animation, UIOpacity, ParticleSystem2D, find, resources } from 'cc';
 const { ccclass, property } = _decorator;
 
 import Context from "./Context";
@@ -116,6 +116,7 @@ export class BattleCanvas extends Component {
 
                 this.node.getChildByPath("pokeball")?.on("afterAppear", () => {
                     this.node.getChildByPath("player/pokemon")?.getComponent(Animation)?.play("pokemonAppear");
+                    this.node.getChildByPath("player/pokemon/spark")?.getComponent(ParticleSystem2D)?.resetSystem();
                 });
 
                 this.node.getChildByPath("player/pokemon")?.on("afterAppear", () => {

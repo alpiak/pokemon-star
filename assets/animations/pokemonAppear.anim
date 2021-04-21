@@ -1,82 +1,164 @@
-{
-  "__type__": "cc.AnimationClip",
-  "_name": "pokemonAppear",
-  "_objFlags": 0,
-  "_native": "",
-  "sample": 60,
-  "speed": 1,
-  "wrapMode": 1,
-  "events": [
-    {
-      "frame": 0.5,
-      "func": "afterAppear",
-      "params": []
-    }
-  ],
-  "_duration": 0.5833333333333334,
-  "_keys": [
-    [
-      0,
-      0.5833333333333334
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "pokemonAppear",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 60,
+    "speed": 1,
+    "wrapMode": 1,
+    "events": [
+      {
+        "frame": 0.5,
+        "func": "afterAppear",
+        "params": []
+      }
     ],
-    [
-      0,
-      0.5833333333333334
-    ],
-    []
-  ],
-  "_stepness": 0,
-  "_curves": [
-    {
-      "modifiers": [
-        "x"
+    "_duration": 1.1666666666666667,
+    "_keys": [
+      [
+        0,
+        0.5833333333333334
       ],
-      "data": {
-        "keys": 0,
-        "values": [
-          0.1,
-          1
-        ],
-        "easingMethods": {
-          "0": "quadOut"
-        }
-      },
-      "commonTarget": 0
-    },
-    {
-      "modifiers": [
-        "y"
+      [
+        0,
+        0.5833333333333334
       ],
-      "data": {
-        "keys": 1,
-        "values": [
-          0.1,
-          1
-        ],
-        "easingMethods": {
-          "0": "quadOut"
-        }
-      },
-      "commonTarget": 0
-    },
-    {
-      "modifiers": [
-        "z"
+      [],
+      [
+        0,
+        0.4166666666666667,
+        1.1666666666666667
       ],
-      "data": {
-        "keys": 2,
-        "values": [],
-        "easingMethods": {}
-      },
-      "commonTarget": 0
-    }
-  ],
-  "_commonTargets": [
-    {
-      "modifiers": [
-        "scale"
+      [
+        0,
+        1.1666666666666667
       ]
-    }
-  ],
-  "_hash": 932825241
-}
+    ],
+    "_stepness": 0,
+    "_curves": [
+      {
+        "modifiers": [
+          "x"
+        ],
+        "data": {
+          "keys": 0,
+          "values": [
+            0.1,
+            1
+          ],
+          "easingMethods": {
+            "0": "quadOut"
+          }
+        },
+        "commonTarget": 0
+      },
+      {
+        "modifiers": [
+          "y"
+        ],
+        "data": {
+          "keys": 1,
+          "values": [
+            0.1,
+            1
+          ],
+          "easingMethods": {
+            "0": "quadOut"
+          }
+        },
+        "commonTarget": 0
+      },
+      {
+        "modifiers": [
+          "z"
+        ],
+        "data": {
+          "keys": 2,
+          "values": [],
+          "easingMethods": {}
+        },
+        "commonTarget": 0
+      },
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          "customMaterial"
+        ],
+        "valueAdapter": {
+          "__id__": 2
+        },
+        "data": {
+          "keys": 3,
+          "values": [
+            0,
+            0,
+            1
+          ],
+          "easingMethods": {
+            "1": [
+              0.45,
+              0,
+              0.1,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "modifiers": [
+          {
+            "__id__": 3
+          },
+          "customMaterial"
+        ],
+        "valueAdapter": {
+          "__id__": 4
+        },
+        "data": {
+          "keys": 4,
+          "values": [
+            0,
+            1.5
+          ],
+          "easingMethods": {
+            "0": [
+              0,
+              0.36,
+              0.39,
+              0.98
+            ]
+          }
+        }
+      }
+    ],
+    "_commonTargets": [
+      {
+        "modifiers": [
+          "scale"
+        ]
+      }
+    ],
+    "_hash": 442526645
+  },
+  {
+    "__type__": "cc.animation.ComponentPath",
+    "component": "cc.Sprite"
+  },
+  {
+    "__type__": "cc.animation.UniformProxyFactory",
+    "passIndex": 0,
+    "uniformName": "progress"
+  },
+  {
+    "__type__": "cc.animation.ComponentPath",
+    "component": "cc.Sprite"
+  },
+  {
+    "__type__": "cc.animation.UniformProxyFactory",
+    "passIndex": 0,
+    "uniformName": "phase"
+  }
+]
