@@ -108,7 +108,7 @@
           "keys": 2,
           "values": [
             0,
-            0.03
+            2.6
           ],
           "easingMethods": {
             "0": "quadOut"
@@ -117,7 +117,7 @@
       }
     ],
     "_commonTargets": [],
-    "_hash": 2726270005
+    "_hash": 1129424265
   },
   {
     "__type__": "cc.animation.ComponentPath",

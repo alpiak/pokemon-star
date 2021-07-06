@@ -24,7 +24,9 @@ CCEffect %{
 
 CCProgram sprite-vs %{
   precision highp float;
+
   #include <cc-global>
+
   #if USE_LOCAL
     #include <cc-local>
   #endif
@@ -61,13 +63,18 @@ CCProgram sprite-vs %{
 
 CCProgram sprite-fs %{
   precision highp float;
+
   #include <embedded-alpha>
   #include <alpha-test>
 
+  const float PI = 3.1415926;
   const float SLAT_WIDTH = 0.01; 
   const float SQRT_2 = sqrt(2.0);
   const vec2 BLUR_CENTER = vec2(.5, .5);
-  const int SAMPLE_COUNT = 6;
+  const float MAX_SAMPLE_COUNT = 50.0;
+  const float STRIDE = .006;
+  const vec3 CAMERA_POSITION = vec3(.5, .5, 1.0);
+  const vec3 CAMERA_DIRECTION = vec3(.0, .0, -1.0);
 
   uniform Constants {
     float progress;
@@ -77,21 +84,42 @@ CCProgram sprite-fs %{
 
   in vec4 color;
 
-  vec4 getBlurColor (sampler2D spriteTexture, vec2 uv0) {
+  float increaseBlurFactor(float blurFactor, vec2 uv) {
+    return blurFactor * acos(dot(normalize(vec3(uv, 0.0) - CAMERA_POSITION), CAMERA_DIRECTION)) / PI;
+  }
+
+  vec4 getBlurColor(sampler2D spriteTexture, vec2 uv0) {
     if (blur_factor == 0.0) {
       return CCSampleTexture(spriteTexture, uv0);
     }
-    vec2 dir = uv0 - BLUR_CENTER;
-    uv0 -= blur_factor * dir * float(SAMPLE_COUNT) / 2.0;
-    vec4 outColor = vec4(0, 0, 0, 0);
+    
+    vec2 direction = uv0 - BLUR_CENTER;
+    vec2 sampleDirection = increaseBlurFactor(blur_factor, uv0) * direction;
+    // vec2 sampleDirection = blur_factor * direction;
+    float blurDistance = length(sampleDirection);
+    float sample_count = blurDistance / STRIDE;
 
-    for (int i = 0; i < SAMPLE_COUNT; ++i) {
-			vec2 uv = uv0 + blur_factor * dir * float(i);
+    uv0 -= sampleDirection / 2.0;
 
-			outColor += CCSampleTexture(spriteTexture, uv);
+    vec4 out_color = vec4(0, 0, 0, 0);
+    vec2 sample_stride_dir = sampleDirection / sample_count;
+    vec2 uv = uv0;
+
+    for (float i = 1.0; i < MAX_SAMPLE_COUNT; i += 1.0) {
+      if (i >= sample_count) {
+			  uv = uv0 + sampleDirection;
+
+			  out_color += CCSampleTexture(spriteTexture, uv) * mod(blurDistance, STRIDE) / STRIDE;
+
+        break;
+      } else {
+			  uv += sample_stride_dir;
+        
+			  out_color += CCSampleTexture(spriteTexture, uv);
+      }
     }
 
-    return outColor / float(SAMPLE_COUNT);
+    return out_color / sample_count;
   }
 
   #if USE_TEXTURE
@@ -106,8 +134,10 @@ CCProgram sprite-fs %{
     #if USE_TEXTURE
       if (progress < 1.0) {
         float t = uv0.t;
+
         if (mod(floor(t / SLAT_WIDTH), 2.0) == 0.0) {
           float s = uv0.s + progress;
+
           if (s > 1.0) {
             o = vec4(0, 0, 0, 1);
           } else {
@@ -115,6 +145,7 @@ CCProgram sprite-fs %{
           }
         } else {
           float s = uv0.s - progress;
+
           if (s < 0.0) {
             o = vec4(0, 0, 0, 1);
           } else {
@@ -126,6 +157,7 @@ CCProgram sprite-fs %{
       }
       #if IS_GRAY
         float gray  = 0.2126 * o.r + 0.7152 * o.g + 0.0722 * o.b;
+
         o.r = o.g = o.b = gray;
       #endif
     #endif
@@ -136,6 +168,7 @@ CCProgram sprite-fs %{
 
     o *= color;
     ALPHA_TEST(o);
+
     return o;
   }
 }%
