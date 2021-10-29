@@ -1,17 +1,14 @@
 {
-  "ver": "4.0.9",
+  "ver": "4.0.22",
   "importer": "typescript",
   "imported": true,
   "uuid": "a0aa8bb8-ba33-4aa8-b6f7-0277c3d40c5b",
-  "files": [
-    ".js",
-    "editor.js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
     "moduleId": "project:///assets/i18n/zh-CN.js",
-    "importerSettings": 7
+    "importerSettings": 7,
+    "simulateGlobals": []
   }
 }

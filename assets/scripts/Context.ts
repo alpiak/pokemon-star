@@ -18,6 +18,8 @@ export default class Context extends Component {
     public enemyPokemon?: Pokemon;
     @property
     public player?: Player;
+    @property
+    public spriteMap: Map<string, string> = new Map<string, string>();
 
     constructor() {
         super();

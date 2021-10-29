@@ -1,79 +1,86 @@
-{
-  "__type__": "cc.AnimationClip",
-  "_name": "enemyAppear",
-  "_objFlags": 0,
-  "_native": "",
-  "sample": 60,
-  "speed": 1,
-  "wrapMode": 1,
-  "events": [
-    {
-      "frame": 2.3333333333333335,
-      "func": "afterAppear",
-      "params": []
-    }
-  ],
-  "_duration": 2.5,
-  "_keys": [
-    [
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "enemyAppear",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 60,
+    "speed": 1,
+    "wrapMode": 1,
+    "_duration": 2.5,
+    "_hash": 4262876071,
+    "_tracks": [
+      {
+        "__id__": 1
+      }
+    ],
+    "_events": [
+      {
+        "frame": 2.3333333333333335,
+        "func": "afterAppear",
+        "params": []
+      }
+    ],
+    "_exoticAnimation": null
+  },
+  {
+    "__type__": "cc.animation.UntypedTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 2
+      }
+    },
+    "_channels": [
+      {
+        "__id__": 3
+      }
+    ]
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      "position"
+    ]
+  },
+  {
+    "__type__": "cc.animation.UntypedTrackChannel",
+    "_curve": {
+      "__id__": 4
+    },
+    "property": "x"
+  },
+  {
+    "__type__": "cc.RealCurve",
+    "_times": [
       0,
       2.5
     ],
-    [],
-    []
-  ],
-  "_stepness": 0,
-  "_curves": [
-    {
-      "modifiers": [
-        "x"
-      ],
-      "data": {
-        "keys": 0,
-        "values": [
-          -725.687,
-          219.134
-        ],
-        "easingMethods": {
-          "0": [
-            0.32,
-            0.95,
-            0.31,
-            1
-          ]
-        }
+    "_values": [
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 2,
+        "tangentWeightMode": 2,
+        "value": -725.687,
+        "rightTangent": 1121.9749375000001,
+        "rightTangentWeight": 897.5803065141315,
+        "leftTangent": 0,
+        "leftTangentWeight": 0,
+        "easingMethod": 0
       },
-      "commonTarget": 0
-    },
-    {
-      "modifiers": [
-        "y"
-      ],
-      "data": {
-        "keys": 1,
-        "values": [],
-        "easingMethods": {}
-      },
-      "commonTarget": 0
-    },
-    {
-      "modifiers": [
-        "z"
-      ],
-      "data": {
-        "keys": 2,
-        "values": [],
-        "easingMethods": {}
-      },
-      "commonTarget": 0
-    }
-  ],
-  "_commonTargets": [
-    {
-      "modifiers": [
-        "position"
-      ]
-    }
-  ],
-  "_hash": 4262876071
-}
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 0,
+        "tangentWeightMode": 1,
+        "value": 219.134,
+        "rightTangent": 0,
+        "rightTangentWeight": 0,
+        "leftTangent": 0,
+        "leftTangentWeight": 1.7249999999999999,
+        "easingMethod": 0
+      }
+    ],
+    "preExtrapolation": 1,
+    "postExtrapolation": 1
+  }
+]

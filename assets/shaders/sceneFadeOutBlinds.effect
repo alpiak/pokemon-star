@@ -68,13 +68,15 @@ CCProgram sprite-fs %{
   #include <alpha-test>
 
   const float PI = 3.1415926;
-  const float SLAT_WIDTH = 0.01; 
   const float SQRT_2 = sqrt(2.0);
+  const float SLAT_WIDTH = 0.01; 
   const vec2 BLUR_CENTER = vec2(.5, .5);
   const float MAX_SAMPLE_COUNT = 50.0;
   const float STRIDE = .006;
   const vec3 CAMERA_POSITION = vec3(.5, .5, 1.0);
   const vec3 CAMERA_DIRECTION = vec3(.0, .0, -1.0);
+  const float ZOOM_OUT_RATIO = .3;
+  const float SAMPLE_START_OFFSET = 0.5 - ZOOM_OUT_RATIO;
 
   uniform Constants {
     float progress;
@@ -90,7 +92,7 @@ CCProgram sprite-fs %{
 
   vec4 getBlurColor(sampler2D spriteTexture, vec2 uv0) {
     if (blur_factor == 0.0) {
-      return CCSampleTexture(spriteTexture, uv0);
+      return texture(spriteTexture, uv0);
     }
     
     vec2 direction = uv0 - BLUR_CENTER;
@@ -99,7 +101,7 @@ CCProgram sprite-fs %{
     float blurDistance = length(sampleDirection);
     float sample_count = blurDistance / STRIDE;
 
-    uv0 -= sampleDirection / 2.0;
+    uv0 -= sampleDirection * SAMPLE_START_OFFSET;
 
     vec4 out_color = vec4(0, 0, 0, 0);
     vec2 sample_stride_dir = sampleDirection / sample_count;
@@ -109,13 +111,13 @@ CCProgram sprite-fs %{
       if (i >= sample_count) {
 			  uv = uv0 + sampleDirection;
 
-			  out_color += CCSampleTexture(spriteTexture, uv) * mod(blurDistance, STRIDE) / STRIDE;
+			  out_color += texture(spriteTexture, uv) * mod(blurDistance, STRIDE) / STRIDE;
 
         break;
       } else {
 			  uv += sample_stride_dir;
         
-			  out_color += CCSampleTexture(spriteTexture, uv);
+			  out_color += texture(spriteTexture, uv);
       }
     }
 

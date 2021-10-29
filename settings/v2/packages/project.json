@@ -4,6 +4,10 @@
     {
       "name": "MASK",
       "value": 1
+    },
+    {
+      "name": "canvas_19",
+      "value": 524288
     }
   ]
 }

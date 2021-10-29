@@ -1,17 +1,14 @@
 {
-  "ver": "4.0.9",
+  "ver": "4.0.22",
   "importer": "typescript",
   "imported": true,
   "uuid": "845083bd-17c3-438d-ab88-9f32bb92a224",
-  "files": [
-    ".js",
-    "editor.js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
     "moduleId": "project:///assets/scripts/Context.js",
-    "importerSettings": 7
+    "importerSettings": 7,
+    "simulateGlobals": []
   }
 }

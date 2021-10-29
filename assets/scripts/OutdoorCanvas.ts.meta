@@ -1,17 +1,14 @@
 {
-  "ver": "4.0.9",
+  "ver": "4.0.22",
   "importer": "typescript",
   "imported": true,
-  "uuid": "b98f5c21-3828-499a-b189-a97c969e4731",
-  "files": [
-    ".js",
-    "editor.js",
-    ".trans"
-  ],
+  "uuid": "3bbc4ed8-af50-49b6-9f24-e7b10d2352b1",
+  "files": [],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
     "moduleId": "project:///assets/scripts/OutdoorCanvas.js",
-    "importerSettings": 7
+    "importerSettings": 7,
+    "simulateGlobals": []
   }
 }

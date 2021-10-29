@@ -2,5 +2,9 @@
   "name": "Pokemon Star",
   "type": "3d",
   "uuid": "70656b30-c805-49fc-8b8c-973078dbe6be",
-  "version": "3.0.0-preview.1"
+  "version": "3.3.1",
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "rpg-ultimate": "github:alpiak/rpg-ultimate#feat/map"
+  }
 }

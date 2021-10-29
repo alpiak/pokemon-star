@@ -86,6 +86,7 @@ export class BattleCanvas extends Component {
                     ], async (line: string) => {
                         await showTextLikeTypeWriter(messageLabel, line);
                     }, async () => {
+                        console.log(this.node.getChildByPath("player/body")?.getComponent(Animation));
                         this.node.getChildByPath("player/body")?.getComponent(Animation)?.play("throwPokeball");
 
                         await new Promise((r) => setTimeout(r, 500));

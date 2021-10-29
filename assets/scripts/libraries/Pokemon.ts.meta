@@ -1,17 +1,14 @@
 {
-  "ver": "4.0.9",
+  "ver": "4.0.22",
   "importer": "typescript",
   "imported": true,
   "uuid": "1aedac4f-db10-4a4e-b75f-93ba5c3595fb",
-  "files": [
-    ".js",
-    "editor.js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
     "moduleId": "project:///assets/scripts/libraries/Pokemon.js",
-    "importerSettings": 7
+    "importerSettings": 7,
+    "simulateGlobals": []
   }
 }

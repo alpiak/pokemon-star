@@ -7,117 +7,45 @@
     "sample": 60,
     "speed": 1,
     "wrapMode": 1,
-    "events": [],
     "_duration": 3.5,
-    "_keys": [
-      [
-        2.5,
-        3.5
-      ],
-      [
-        1.5,
-        1.6666666666666667,
-        1.8333333333333333,
-        2,
-        2.1666666666666665
-      ],
-      [
-        0,
-        1.5
-      ]
-    ],
-    "_stepness": 0,
-    "_curves": [
+    "_hash": 1129424265,
+    "_tracks": [
       {
-        "modifiers": [
-          {
-            "__id__": 1
-          },
-          "customMaterial"
-        ],
-        "valueAdapter": {
-          "__id__": 2
-        },
-        "data": {
-          "keys": 0,
-          "values": [
-            0,
-            1
-          ],
-          "easingMethods": {}
-        }
+        "__id__": 1
       },
       {
-        "modifiers": [
-          {
-            "__id__": 3
-          },
-          "customMaterial"
-        ],
-        "valueAdapter": {
-          "__id__": 4
-        },
-        "data": {
-          "keys": 1,
-          "values": [
-            0,
-            0.9,
-            0,
-            0.9,
-            0
-          ],
-          "easingMethods": {
-            "0": [
-              0.42,
-              0,
-              0.8,
-              1
-            ],
-            "1": [
-              0.2,
-              0,
-              0.58,
-              1
-            ],
-            "2": [
-              0.42,
-              0,
-              0.8,
-              1
-            ],
-            "3": [
-              0.2,
-              0,
-              0.58,
-              1
-            ]
-          }
-        }
+        "__id__": 7
       },
       {
-        "modifiers": [
-          {
-            "__id__": 5
-          },
-          "customMaterial"
-        ],
-        "valueAdapter": {
-          "__id__": 6
-        },
-        "data": {
-          "keys": 2,
-          "values": [
-            0,
-            2.6
-          ],
-          "easingMethods": {
-            "0": "quadOut"
-          }
-        }
+        "__id__": 13
       }
     ],
-    "_commonTargets": [],
-    "_hash": 1129424265
+    "_events": [],
+    "_exoticAnimation": null
+  },
+  {
+    "__type__": "cc.animation.RealTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 2
+      },
+      "proxy": {
+        "__id__": 4
+      }
+    },
+    "_channel": {
+      "__id__": 5
+    }
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      {
+        "__id__": 3
+      },
+      "customMaterial"
+    ]
   },
   {
     "__type__": "cc.animation.ComponentPath",
@@ -129,6 +57,69 @@
     "uniformName": "progress"
   },
   {
+    "__type__": "cc.animation.Channel",
+    "_curve": {
+      "__id__": 6
+    }
+  },
+  {
+    "__type__": "cc.RealCurve",
+    "_times": [
+      2.5,
+      3.5
+    ],
+    "_values": [
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 0,
+        "tangentWeightMode": 0,
+        "value": 0,
+        "rightTangent": 0,
+        "rightTangentWeight": 0,
+        "leftTangent": 0,
+        "leftTangentWeight": 0,
+        "easingMethod": 0
+      },
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 0,
+        "tangentWeightMode": 0,
+        "value": 1,
+        "rightTangent": 0,
+        "rightTangentWeight": 0,
+        "leftTangent": 0,
+        "leftTangentWeight": 0,
+        "easingMethod": 0
+      }
+    ],
+    "preExtrapolation": 1,
+    "postExtrapolation": 1
+  },
+  {
+    "__type__": "cc.animation.RealTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 8
+      },
+      "proxy": {
+        "__id__": 10
+      }
+    },
+    "_channel": {
+      "__id__": 11
+    }
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      {
+        "__id__": 9
+      },
+      "customMaterial"
+    ]
+  },
+  {
     "__type__": "cc.animation.ComponentPath",
     "component": "cc.Sprite"
   },
@@ -138,6 +129,105 @@
     "uniformName": "blink_level"
   },
   {
+    "__type__": "cc.animation.Channel",
+    "_curve": {
+      "__id__": 12
+    }
+  },
+  {
+    "__type__": "cc.RealCurve",
+    "_times": [
+      1.5,
+      1.6666666666666667,
+      1.8333333333333333,
+      2,
+      2.1666666666666665
+    ],
+    "_values": [
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 2,
+        "tangentWeightMode": 2,
+        "value": 0,
+        "rightTangent": 0,
+        "rightTangentWeight": 0.07000000000000002,
+        "leftTangent": 0,
+        "leftTangentWeight": 0,
+        "easingMethod": 0
+      },
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 2,
+        "tangentWeightMode": 3,
+        "value": 0.9,
+        "rightTangent": 0,
+        "rightTangentWeight": 0.033333333333333305,
+        "leftTangent": 0,
+        "leftTangentWeight": 0.03333333333333334,
+        "easingMethod": 0
+      },
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 2,
+        "tangentWeightMode": 3,
+        "value": 0,
+        "rightTangent": 0,
+        "rightTangentWeight": 0.07000000000000002,
+        "leftTangent": 0,
+        "leftTangentWeight": 0.06999999999999994,
+        "easingMethod": 0
+      },
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 2,
+        "tangentWeightMode": 3,
+        "value": 0.9,
+        "rightTangent": 0,
+        "rightTangentWeight": 0.033333333333333305,
+        "leftTangent": 0,
+        "leftTangentWeight": 0.03333333333333334,
+        "easingMethod": 0
+      },
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 0,
+        "tangentWeightMode": 1,
+        "value": 0,
+        "rightTangent": 0,
+        "rightTangentWeight": 0,
+        "leftTangent": 0,
+        "leftTangentWeight": 0.06999999999999994,
+        "easingMethod": 0
+      }
+    ],
+    "preExtrapolation": 1,
+    "postExtrapolation": 1
+  },
+  {
+    "__type__": "cc.animation.RealTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 14
+      },
+      "proxy": {
+        "__id__": 16
+      }
+    },
+    "_channel": {
+      "__id__": 17
+    }
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      {
+        "__id__": 15
+      },
+      "customMaterial"
+    ]
+  },
+  {
     "__type__": "cc.animation.ComponentPath",
     "component": "cc.Sprite"
   },
@@ -145,5 +235,44 @@
     "__type__": "cc.animation.UniformProxyFactory",
     "passIndex": 0,
     "uniformName": "blur_factor"
+  },
+  {
+    "__type__": "cc.animation.Channel",
+    "_curve": {
+      "__id__": 18
+    }
+  },
+  {
+    "__type__": "cc.RealCurve",
+    "_times": [
+      0,
+      1.5
+    ],
+    "_values": [
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 0,
+        "tangentWeightMode": 0,
+        "value": 0,
+        "rightTangent": 0,
+        "rightTangentWeight": 0,
+        "leftTangent": 0,
+        "leftTangentWeight": 0,
+        "easingMethod": 3
+      },
+      {
+        "__type__": "cc.RealKeyframeValue",
+        "interpolationMode": 0,
+        "tangentWeightMode": 0,
+        "value": 2.6,
+        "rightTangent": 0,
+        "rightTangentWeight": 0,
+        "leftTangent": 0,
+        "leftTangentWeight": 0,
+        "easingMethod": 0
+      }
+    ],
+    "preExtrapolation": 1,
+    "postExtrapolation": 1
   }
 ]

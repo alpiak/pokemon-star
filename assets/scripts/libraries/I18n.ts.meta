@@ -1,17 +1,14 @@
 {
-  "ver": "4.0.9",
+  "ver": "4.0.22",
   "importer": "typescript",
   "imported": true,
   "uuid": "cb25103f-a157-4b7e-af68-764af290a605",
-  "files": [
-    ".js",
-    "editor.js",
-    ".trans"
-  ],
+  "files": [],
   "subMetas": {},
   "userData": {
     "importAsPlugin": false,
     "moduleId": "project:///assets/scripts/libraries/I18n.js",
-    "importerSettings": 7
+    "importerSettings": 7,
+    "simulateGlobals": []
   }
 }
